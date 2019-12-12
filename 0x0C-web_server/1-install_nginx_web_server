@@ -1,0 +1,9 @@
+!/usr/bin/env bash
+# configures a new Ubuntu machine
+# Install nginx web server
+sudo apt-get -y update
+sudo apt-get -y install nginx
+# When querying Nginx at its root / with a GET request (requesting a page) using
+# curl, it must return a page that contains the string Holberton School
+echo "Holberton School" | tee /var/www/html/index.html
+service nginx start
