@@ -2,10 +2,12 @@
 # configures a new Ubuntu machine
 # Install nginx web server
 sudo apt-get -y update
+sudo apt-get -y upgrade
 sudo apt-get -y install nginx
 # Nginx should be listening on port 80
 # When querying Nginx at its root / with a GET request (requesting a page) using
 # curl, it must return a page that contains the string Holberton School
 echo "Holberton School" | tee /var/www/html/index.html
 sed -i '43i location /redirect_me{\nrewrite ^/(.*)$ https://www.youtube.com/watch?v=EgBJmlPo8Xw permanent;\n}\n' /etc/nginx/sites-available/default
-sudo service nginx start
+sudo service nginx restart
+sudo service nginx reload
