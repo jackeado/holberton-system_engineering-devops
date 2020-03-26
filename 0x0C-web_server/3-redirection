@@ -7,5 +7,5 @@ sudo apt-get -y install nginx
 # When querying Nginx at its root / with a GET request (requesting a page) using
 # curl, it must return a page that contains the string Holberton School
 echo "Holberton School" | tee /var/www/html/index.html
-sed -i '/listen port 80 default_server; /a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n}\n' /etc/nginx/sites-available/default
+sed -i '43i location /redirect_me{\nrewrite ^/(.*)$ https://www.youtube.com/watch?v=EgBJmlPo8Xw permanent;\n}\n' /etc/nginx/sites-available/default
 sudo service nginx start
