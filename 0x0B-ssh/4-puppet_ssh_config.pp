@@ -6,7 +6,7 @@ file_line { 'ssh_config':
 	  replace => true,
 }
 
-file_line { 'Turno off pass'
+file_line { 'Turn off pass':
 	  path => '/etc/ssh/ssh_config'
 	  line => '	PasswordAuthentication no',
 	  replace => true,
