@@ -1,0 +1,4 @@
+#!/bin/bash
+# Cofig lisent port 80
+sudo cat /etc/nginx/sites-available/default > /etc/nginx/sites-enabled/default
+sudo service nginx restart
