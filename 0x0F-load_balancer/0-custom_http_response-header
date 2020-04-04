@@ -4,10 +4,8 @@
 #  configures a brand new Ubuntu machine
 sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo service nginx start
 # Nginx should be listening on port 80
 # When querying Nginx at its root / with a GET request (requesting a page) using
 # curl, it must return a page that contains the string Holberton School
-sed -i '11i add_header X-Served-By $HOSTNAME;\n' /etc/nginx/nginx.conf
-sudo echo "Holberton School" | tee /var/www/html/index.nginx-debian.html
+sed -i "/http {/a add_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
 sudo service nginx start
