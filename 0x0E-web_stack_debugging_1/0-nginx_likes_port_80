@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Cofig lisent port 80
+# script to link sites-enabled to sites-available and restart nginx
 sudo rm /etc/nginx/sites-enabled/default
-sudo cat /etc/nginx/sites-available/default >> /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx start
