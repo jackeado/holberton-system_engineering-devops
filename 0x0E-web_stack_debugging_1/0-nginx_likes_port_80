@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Cofig lisent port 80
 sudo rm /etc/nginx/sites-enabled/default
 sudo cat /etc/nginx/sites-available/default >> /etc/nginx/sites-enabled/default
