@@ -5,8 +5,7 @@ return information about the employee's todo list progress
 """
 import requests
 from sys import argv
-from requests.packages.urllib3.exceptions import InsecureRequestWarning
-requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
 
 if __name__ == "__main__":
     userId = argv[1]
@@ -22,5 +21,3 @@ if __name__ == "__main__":
     print("Employee {} is done with tasks({}/{}):".
           format(user.get('name'), len(task_com), len(todo)))
     print("\n".join("\t {}".format(task) for task in task_com))
-
-    
