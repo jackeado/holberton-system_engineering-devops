@@ -10,6 +10,6 @@ def number_of_subscribers(subreddit):
                        format(subreddit), headers={'user-agent': 'X-Modhash'})
     data_sub = sub.json()
     dataSu = data_sub['data']['subscribers']
-    if dataSu is None:
+    if dataSu is None or dataSu is not str:
         return 0
     return(dataSu)
